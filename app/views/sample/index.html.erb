@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag  "bootstrap" %>
 
-<h3>Using <%= session[:authentication_type] %> <a class="btn btn-small btn-primary" href="/choose">change</a></h3>
+<h3>Using <%= session[:authentication_type] %> <a class="btn btn-mini btn-primary" href="/choose">change</a></h3>
 <div class="btn-toolbar">
 	<div class="btn-group">
 		<% @model_list.sort.each do |path, name|%>
