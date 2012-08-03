@@ -28,9 +28,9 @@ but as this app demonstrates, those are only for convenience.
 
     rails server -p8001
     
-4. Visit our {Indivo Sandbox}[http://sandbox.indivohealth.org] (you will need to 
-sign up for an account), enable "Your Web App" from the "App Settings" page, and 
-then click on "Your Web App" on the right hand side.  This will call out to your
+After the app is running, visit our {Indivo Sandbox}[http://sandbox.indivohealth.org] 
+(you will need to sign up for an account), enable "Your Web App" from the "App Settings"
+page, and then click on "Your Web App" on the right hand side.  This will call out to your
 running app on localhost:8001 and begin the demo.
 
 
