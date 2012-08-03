@@ -1,0 +1,40 @@
+== Welcome to the Indivo Sample Rails App 
+
+The purpose of this app is to demonstrate the three types of Authentication that
+{Indivo}[http://indivohealth.org] supports, and how to use a standard OAuth library
+to communicate with Indivo.  We provide a {Python Client}[https://github.com/chb/indivo_client_py]
+and {iOS Framework}[https://github.com/chb/IndivoFramework-ios] for app development,
+but as this app demonstrates, those are only for convenience.
+
+== Requirements
+
+* Rails 3.2+
+* Ruby 1.8.7+
+* Bundler
+
+== Install and Run
+
+1. Install dependencies with Bundler
+
+    budle install
+    
+2. Create and migrate the database.  This app uses SQLite3 since this is purely for demonstration purposes
+
+    rake db:create
+    
+    rake db:migrate
+
+3. Run the application on localhost port 8001
+
+    rails server -p8001
+    
+4. Visit our {Indivo Sandbox}[http://sandbox.indivohealth.org] (you will need to 
+sign up for an account), enable "Your Web App" from the "App Settings" page, and 
+then click on "Your Web App" on the right hand side.  This will call out to your
+running app on localhost:8001 and begin the demo.
+
+
+== More Information
+
+Visit our main {site}[http://indivohealth.org/] for more information on Indivo, and
+check out our {developer community}[http://indivohealth.org/developer-community] 

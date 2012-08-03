@@ -1,0 +1,51 @@
+<%= javascript_include_tag "http://sample-apps.smartplatforms.org/framework/smart/scripts/smart-api-client.js" %>
+<%= stylesheet_link_tag  "bootstrap" %>
+
+<h3>Using <%= session[:authentication_type] %> <a class="btn btn-small btn-primary" href="/choose">change</a></h3>
+<div class="btn-toolbar">
+	<div class="btn-group">
+		<button class="btn model btn-success" data-model="allergies">Allergies</button>
+		<button class="btn model" data-model="demographics">Demographics</button>
+		<button class="btn model" data-model="encounters">Encounters</button>
+		<button class="btn model" data-model="fulfillments">Fulfillments</button>
+		<button class="btn model" data-model="immunizations">Immunizations</button>
+		<button class="btn model" data-model="lab_results">Lab Results</button>
+		<button class="btn model" data-model="medications">Medications</button>
+		<button class="btn model" data-model="problems">Problems</button>
+		<button class="btn model" data-model="vital_signs">Vital Signs</button>
+	</div>
+</div>
+<pre id="results"></pre>
+<script>
+	var getModels = function(modelName){
+		// retrieves and displays the given SMART model
+		SMART.api_call(
+	    {
+	      method: 'GET',
+	      url: "/records/" + SMART.record.id + "/" + modelName + (modelName === "demographics" ? "" : "/"),
+	      data: {}
+	    },
+	    // success
+	    function(response) { 
+	    	$('#results').text(response.body); 
+	    },
+	    // error
+	    function(jqXHR) {
+	    	$('#results').text("request failed:\n" + jqXHR.status);
+	    });
+	}
+
+	SMART.ready(function() {
+		$('.model').click(function(ev){
+			// load the clicked model 
+			$('#results').empty();
+	    	getModels($(this).data("model"));
+	    	$('.model').removeClass("btn-success");
+	    	$(this).addClass("btn-success");
+	    });
+	    
+	    // start by loading allergies
+		getModels("allergies");		
+	});
+
+</script>
