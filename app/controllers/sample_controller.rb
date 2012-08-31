@@ -38,7 +38,7 @@ class SampleController < ApplicationController
     session[:request_token] = {:token => request_token.token, :secret => request_token.secret}
 
     # redirect the user to the authorization url
-    redirect_to "http://sandbox.indivohealth.org/oauth/authorize?oauth_token=#{request_token.token}"
+    redirect_to "#{INDIVO_CONFIG[:ui_server]}#{INDIVO_CONFIG[:authorize_path]}?oauth_token=#{request_token.token}"
   end
 
   def after_auth

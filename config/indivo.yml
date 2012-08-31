@@ -1,0 +1,14 @@
+# Credentials for the Indivo Sandbox (http://sandbox.indivohealth.org/about)
+development:
+  # base Indivo paths including protocol, host and port
+  :server: http://sandbox.indivohealth.org:8000
+  :ui_server: http://sandbox.indivohealth.org
+
+  # OAuth paths
+  :request_token_path: /oauth/request_token
+  :access_token_path: /oauth/access_token
+  :authorize_path: /oauth/authorize
+
+  # OAuth credentials
+  :consumer_key: sampleweb@apps.indivo.org
+  :consumer_secret: yourwebapp
