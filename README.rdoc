@@ -16,7 +16,7 @@ but as this app demonstrates, those are only for convenience.
 
 1. Install dependencies with Bundler
 
-    budle install
+    bundle install
     
 2. Create and migrate the database.  This app uses SQLite3 since this is purely for demonstration purposes
 
